@@ -12,7 +12,7 @@
 # ...
 
 -- Drop the index if it already exists (avoid conflicts when re-running the script)
-DROP INDEX IF EXISTS idx_review_date ON Review;
+DROP INDEX idx_review_date ON Review;
 
 -- Run EXPLAIN to analyze the original query before optimization
 EXPLAIN 

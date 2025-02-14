@@ -12,7 +12,7 @@
 # ...
 
 -- Drop the index if it already exists
-DROP INDEX IF EXISTS idx_review_user_id ON Review;
+DROP INDEX idx_review_user_id ON Review;
 
 -- Run EXPLAIN to analyze the query execution plan before optimization
 EXPLAIN 
