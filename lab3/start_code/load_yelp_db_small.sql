@@ -76,7 +76,7 @@ CREATE TABLE `Business` (
 );
 
 DESCRIBE Business; # Returns the attributes created in table business. Use this command to ensure the table was created correctly
-LOAD DATA LOCAL INFILE 'yelp_data_business.csv' INTO TABLE Business # Imports the data from a CSV file into table Business. 
+LOAD DATA LOCAL INFILE '/Users/yangxi/Desktop/Master/ECE656/lab3/start_code/yelp_data_business.csv' INTO TABLE Business # Imports the data from a CSV file into table Business. 
 															# You need to insert the path to file. Make sure to add ".csv" at the
                                                             # end of your files name. An example of path to file is
                                                             # C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/yelp_academic_dataset_business_small_2.csv
@@ -266,7 +266,7 @@ CREATE TABLE `Checkin` (
 show tables;
 
 DESCRIBE Checkin; # Returns the attributes created in table Checkin. Use this command to ensure the table was created correctly
-LOAD DATA LOCAL INFILE 'yelp_data_checkin.csv' INTO TABLE Checkin # Imports the data from a CSV file into table Checkin. 
+LOAD DATA LOCAL INFILE '/Users/yangxi/Desktop/Master/ECE656/lab3/start_code/yelp_data_checkin.csv' INTO TABLE Checkin # Imports the data from a CSV file into table Checkin. 
 															# You need to insert the path to file. Make sure to add ".csv" at the
                                                             # end of your files name. An example of path to file is
                                                             # C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/yelp_academic_dataset_checkin_small_2.csv
@@ -290,7 +290,7 @@ CREATE TABLE `Photo` (
 
 
 DESCRIBE Photo; # Returns the attributes created in table Photo. Use this command to ensure the table was created correctly
-LOAD DATA LOCAL INFILE 'yelp_data_photo.csv' INTO TABLE Photo # Imports the data from a CSV file into table Photo. 
+LOAD DATA LOCAL INFILE '/Users/yangxi/Desktop/Master/ECE656/lab3/start_code/yelp_data_photo.csv' INTO TABLE Photo # Imports the data from a CSV file into table Photo. 
 															# You need to insert the path to file. Make sure to add ".csv" at the
                                                             # end of your files name. An example of path to file is
                                                             # C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/yelp_academic_dataset_photo_small_2.csv
@@ -320,7 +320,7 @@ CREATE TABLE `Review`(
 );
 
 DESCRIBE Review; # Returns the attributes created in table Photo. Use this command to ensure the table was created correctly
-LOAD DATA LOCAL INFILE 'yelp_data_review.csv' INTO TABLE Review # Imports the data from a CSV file into table Review. 
+LOAD DATA LOCAL INFILE '/Users/yangxi/Desktop/Master/ECE656/lab3/start_code/yelp_data_review.csv' INTO TABLE Review # Imports the data from a CSV file into table Review. 
 															# You need to insert the path to file. Make sure to add ".csv" at the
                                                             # end of your files name. An example of path to file is
                                                             # C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/yelp_academic_dataset_review_small_2.csv
@@ -346,7 +346,7 @@ CREATE TABLE `Tip` (
     `user_id` VARCHAR(22) NOT NULL
 );
 DESCRIBE Tip; # Returns the attributes created in table Tip. Use this command to ensure the table was created correctly
-LOAD DATA LOCAL INFILE 'yelp_data_tip.csv' INTO TABLE Tip # Imports the data from a CSV file into table Tip. 
+LOAD DATA LOCAL INFILE '/Users/yangxi/Desktop/Master/ECE656/lab3/start_code/yelp_data_tip.csv' INTO TABLE Tip # Imports the data from a CSV file into table Tip. 
 															# You need to insert the path to file. Make sure to add ".csv" at the
                                                             # end of your files name. An example of path to file is
                                                             # C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/yelp_academic_dataset_tip_small_2.csv
@@ -387,7 +387,7 @@ CREATE TABLE `User_data` (
   `yelping_since` datetime DEFAULT NULL
 ) ;
 DESCRIBE User_data; # Returns the attributes created in table User_data. Use this command to ensure the table was created correctly
-LOAD DATA LOCAL INFILE 'yelp_data_user.csv' INTO TABLE User_data # Imports the data from a CSV file into table User_data. 
+LOAD DATA LOCAL INFILE '/Users/yangxi/Desktop/Master/ECE656/lab3/start_code/yelp_data_user.csv' INTO TABLE User_data # Imports the data from a CSV file into table User_data. 
 															# You need to insert the path to file. Make sure to add ".csv" at the
                                                             # end of your files name. An example of path to file is
                                                             # C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/yelp_academic_dataset_user_small_2.csv

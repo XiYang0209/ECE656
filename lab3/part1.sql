@@ -36,6 +36,7 @@ BEGIN
             SET errorCode = 0;
         END IF;
     END IF;
+    SELECT errorCode AS errorCode;
 END$$
 
 DELIMITER ;
