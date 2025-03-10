@@ -25,6 +25,7 @@ from sklearn.tree import export_graphviz
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 from sklearn.metrics import confusion_matrix
+from sklearn.ensemble import RandomForestClassifier
 
 
 # load dataset
@@ -51,13 +52,22 @@ for col in class_names:
             count[item] = 1
     print(f"Column {col}:")
     for item in count:
-        print(f"{item} : count: {count[item]}, proportion: {count[item] / len(data_train)}%")
+        print(f"{item} : count: {count[item]}, proportion: {count[item] / len(data_train)}")
+    print()
+    count = {}
+    for item in data_test[col]:
+        if item in count:
+            count[item] = count[item] + 1
+        else:
+            count[item] = 1
+    print(f"Column {col}:")
+    for item in count:
+        print(f"{item} : count: {count[item]}, proportion: {count[item] / len(data_test)}")
     print()
 
 
 # select features
-feature_columns = ['workclass', 'education']
-
+feature_columns = ['age', 'workclass', 'education-num', 'marital-status', 'occupation', 'relationship', 'race', 'sex', 'capital-gain', 'capital-loss', 'hours-per-week', 'native-country']
 features_train = data_train[feature_columns]
 label_train = data_train.income
 
@@ -88,47 +98,45 @@ for i, col in enumerate(feature_columns):
         print()
 
        
-# # create decision tree model
-# classifier_1 = DecisionTreeClassifier(max_leaf_nodes=10)
-# classifier_2 = DecisionTreeClassifier(max_leaf_nodes=100)
-# classifier_3 = DecisionTreeClassifier()
-# model_1 = classifier_1.fit(X=features_train, y=label_train)
+# create decision tree model
+classifier = RandomForestClassifier(min_samples_split=2)
+model = classifier.fit(X=features_train, y=label_train)
 
 
-# # evaluate model
-# label_pred_train = <insert code here>
-# label_pred_test = <insert code here>
+# evaluate model
+label_pred_train = model.predict(features_train)
+label_pred_test = model.predict(features_test)
 
-# print()
-# print("Evaluating model")
-# print("   accuracy on training data: %.2f" % metrics.accuracy_score(<insert code here>))
-# print("   accuracy on testing data: %.2f" % metrics.accuracy_score(<insert code here>))
-# print("   F1 score on training data: %.2f" % metrics.f1_score(<insert code here>))
-# print("   F1 score on testing data: %.2f" % metrics.f1_score(<insert code here>))
+print()
+print("Evaluating model")
+print("   accuracy on training data: %.2f" % metrics.accuracy_score(label_train, label_pred_train))
+print("   accuracy on testing data: %.2f" % metrics.accuracy_score(label_test, label_pred_test))
+print("   F1 score on training data: %.2f" % metrics.f1_score(label_train, label_pred_train))
+print("   F1 score on testing data: %.2f" % metrics.f1_score(label_test, label_pred_test))
 
-# print()
-# print("Confusion matrix")
-# matrix = confusion_matrix(<insert code here>)
+print()
+print("Confusion matrix")
+matrix = confusion_matrix(label_test, label_pred_test)
 
-# x = numpy.array(matrix)
-# print("                 ", end="")
-# for l in raw_labels:
-#     print("%015s" % l, end="")
-# print("   (predicted label)")
-# for label, row in zip(list(raw_labels), x):
-#     print( '%015s [%s]' % (label, ' '.join('%014s' % i for i in row)))
-# print("(correct label)")
+x = numpy.array(matrix)
+print("                 ", end="")
+for l in raw_labels:
+    print("%015s" % l, end="")
+print("   (predicted label)")
+for label, row in zip(list(raw_labels), x):
+    print( '%015s [%s]' % (label, ' '.join('%014s' % i for i in row)))
+print("(correct label)")
 
-# print()
+print()
 
 
-# # feature importance
+# feature importance
 
 # <add some code here to quantify the relative importance of different features>
 
 
 # # visualization
-# fname = 'census.svg'
+# fname = 'census_taskB.svg'
 # print()
 # print('Saving visualization to ' + fname + ", this may take a few seconds ...")
 
