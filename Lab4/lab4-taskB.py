@@ -31,8 +31,8 @@ from sklearn.ensemble import RandomForestClassifier
 # load dataset
 column_names = ['age', 'workclass', 'fnlwgt', 'education', 'education-num', 'marital-status', 'occupation', 'relationship', 'race', 'sex', 'capital-gain', 'capital-loss', 'hours-per-week', 'native-country', 'income']
 
-data_train = pd.read_csv("adult.data", header=None, sep=', ', names=column_names, engine='python')
-data_test  = pd.read_csv("adult.test", header=None, sep=', ', names=column_names, engine='python', skiprows=1)
+data_train = pd.read_csv("./Lab4/adult.data", header=None, sep=', ', names=column_names, engine='python')
+data_test  = pd.read_csv("./Lab4/adult.test", header=None, sep=', ', names=column_names, engine='python', skiprows=1)
 
 
 print()
@@ -97,9 +97,18 @@ for i, col in enumerate(feature_columns):
             print(f"    {i} = {cls}")
         print()
 
+# Set Random Forest hyperparameters
+random_forest_params = {
+    'n_estimators': 100,       # Use 100 trees
+    'max_depth': None,         # No limit on tree depth
+    'min_samples_split': 2,    # Minimum 2 samples required to split an internal node
+    'min_samples_leaf': 2,     # Minimum of 2 samples required in a leaf node
+    'random_state': 42,
+    'n_jobs': -1               # Utilize all available CPU cores
+}
        
 # create decision tree model
-classifier = RandomForestClassifier(min_samples_split=2)
+classifier = RandomForestClassifier(**random_forest_params)
 model = classifier.fit(X=features_train, y=label_train)
 
 

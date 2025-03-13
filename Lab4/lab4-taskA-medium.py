@@ -30,8 +30,8 @@ from sklearn.metrics import confusion_matrix
 # load dataset
 column_names = ['age', 'workclass', 'fnlwgt', 'education', 'education-num', 'marital-status', 'occupation', 'relationship', 'race', 'sex', 'capital-gain', 'capital-loss', 'hours-per-week', 'native-country', 'income']
 
-data_train = pd.read_csv("adult.data", header=None, sep=', ', names=column_names, engine='python')
-data_test  = pd.read_csv("adult.test", header=None, sep=', ', names=column_names, engine='python', skiprows=1)
+data_train = pd.read_csv("./Lab4/adult.data", header=None, sep=', ', names=column_names, engine='python')
+data_test  = pd.read_csv("./Lab4/adult.test", header=None, sep=', ', names=column_names, engine='python', skiprows=1)
 
 
 print()

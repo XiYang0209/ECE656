@@ -10,6 +10,14 @@
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal"
+        },
+        {
+            "type": "python",
+            "name": "debug lab4-taskA-large.py",
+            "request": "launch",
+            "justMyCode": false,
+            "args": [],
+            "program": "/Users/yangxi/Desktop/Master/ECE656/Lab4/lab4-taskA-large.py"
         }
     ]
 }
