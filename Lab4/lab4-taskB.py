@@ -99,7 +99,7 @@ for i, col in enumerate(feature_columns):
 
 # Set Random Forest hyperparameters
 random_forest_params = {
-    'n_estimators': 100,       # Use 100 trees
+    'n_estimators': 90,       # Use 90 trees
     'max_depth': None,         # No limit on tree depth
     'min_samples_split': 2,    # Minimum 2 samples required to split an internal node
     'min_samples_leaf': 2,     # Minimum of 2 samples required in a leaf node
