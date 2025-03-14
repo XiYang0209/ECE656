@@ -132,6 +132,13 @@ print()
 # feature importance
 
 # <add some code here to quantify the relative importance of different features>
+print("\nFeature Importances:")
+feature_importances = model.feature_importances_
+
+# 按重要性排序并打印
+sorted_indices = numpy.argsort(feature_importances)[::-1]
+for i in sorted_indices:
+    print(f"{feature_columns[i]}: {feature_importances[i]:.3f}")
 
 
 # visualization
